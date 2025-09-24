@@ -9,7 +9,7 @@ all: $(OUT_JS)
 standalone: $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(OUT_WASM)
 
-js: $(SRC)
+$(OUT_JS): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(OUT_JS) -s NO_EXIT_RUNTIME=1 -s "EXPORTED_RUNTIME_METHODS=['ccall','cwrap']" -s "EXPORTED_FUNCTIONS=['_free']"
 
 #html: $(SRC)
